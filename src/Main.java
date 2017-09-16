@@ -30,7 +30,7 @@ try {
                 System.out.println(cseb.len);
                 cseb.addFirst(std);
                 System.out.println(cseb.len);
-                cseb.removeFromIndex(1);
+                cseb.removeFromIndex(0);
                 System.out.println(cseb.len);
                 
 	}

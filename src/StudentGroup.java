@@ -161,15 +161,11 @@ public class StudentGroup implements StudentArrayOperation {
                 temp = students;
                 this.students = new Student[index+1];
                 for(int i=index+1;i<students.length;i++){
-                    temp[i] = null;
+                    Deepak a = new Deepak();
+                    a.remove(students,i,len);
                 }
-                for(int i=0;i<=index;i++){
-                    if(temp[i] == null)
-                        break;
-                    students[i] = temp[i];
-                }
-                
                 len = students.length;
+                
 	}
 
 	@Override
