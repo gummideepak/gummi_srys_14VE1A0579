@@ -24,6 +24,8 @@ try {
                 System.out.println(cseb.len);
                 cseb.addLast(std);
                 System.out.println(cseb.len);
+                cseb.remove(std);
+                System.out.println(cseb.len);
 	}
 
 }

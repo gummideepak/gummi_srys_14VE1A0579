@@ -80,6 +80,12 @@ public class Student implements Comparable {
 		return super.equals(obj);
 	}
 	
+        public boolean ownEquals(Student std){
+            if(this.fullName.equals(std.fullName)){
+                return true;
+            }
+            return false;
+        }
 	
 	/**
 	 * DO NOT change this method it will be used during the task check
