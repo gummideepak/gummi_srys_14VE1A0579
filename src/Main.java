@@ -33,6 +33,7 @@ try {
                 cseb.removeFromIndex(0);
                 System.out.println(cseb.len);
                 System.out.println(cseb.getCurrentAgeByDate(0));
+                System.out.println(cseb.getByBirthDate(startDate).length);
                
 
 }
