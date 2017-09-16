@@ -121,7 +121,8 @@ public class StudentGroup implements StudentArrayOperation {
                 len--;
                 
                 for(int i = 0; i < len; i++){
-                    if(student.ownEquals(students[i]))
+                    //System.out.println(i);
+                    if(temp[i].getFullName().equals(student.getFullName()))
                         continue;
                     students[i] = temp[i];
                 }

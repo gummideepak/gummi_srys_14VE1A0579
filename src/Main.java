@@ -19,10 +19,16 @@ try {
 } catch (ParseException e) {
     e.printStackTrace();
 }
-                Student std = new Student(123,"asda",startDate,43.3);
-                StudentGroup cseb = new StudentGroup(5);
+                Student std = new Student(123,"one",startDate,43.3);
+                Student std1 = new Student(123,"two",startDate,43.3);
+                Student std2 = new Student(123,"three",startDate,43.3);
+                Student std3 = new Student(123,"4",startDate,43.3);
+                Student std4 = new Student(123,"one",startDate,43.3);
+                Student [] cse = {std1,std2,std3,std4};
+                StudentGroup cseb = new StudentGroup(4);
+                cseb.setStudents(cse);
                 System.out.println(cseb.len);
-                cseb.addLast(std);
+                cseb.addFirst(std);
                 System.out.println(cseb.len);
                 cseb.remove(std);
                 System.out.println(cseb.len);
