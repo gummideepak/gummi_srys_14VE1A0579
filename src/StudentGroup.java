@@ -123,6 +123,8 @@ public class StudentGroup implements StudentArrayOperation {
 	@Override
 	public void remove(Student student) {
 		// Add your implementation here
+                 if(student == null)
+                    throw new IllegalArgumentException();
                 boolean flag=false;
                 for(int j=0;j<len;j++){
                     if(students[j].getFullName().equals(student.getFullName())){
@@ -153,11 +155,28 @@ public class StudentGroup implements StudentArrayOperation {
 	@Override
 	public void removeFromIndex(int index) {
 		// Add your implementation here
+                if(index<0 || index >= students.length)
+                    throw new IllegalArgumentException();
+                Student[] temp;
+                temp = students;
+                this.students = new Student[index+1];
+                for(int i=index+1;i<students.length;i++){
+                    temp[i] = null;
+                }
+                for(int i=0;i<=index;i++){
+                    if(temp[i] == null)
+                        break;
+                    students[i] = temp[i];
+                }
+                
+                len = students.length;
 	}
 
 	@Override
 	public void removeFromElement(Student student) {
 		// Add your implementation here
+                 if(student == null)
+                    throw new IllegalArgumentException();
 	}
 
 	@Override
