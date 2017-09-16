@@ -161,8 +161,8 @@ public class StudentGroup implements StudentArrayOperation {
                 temp = students;
                 this.students = new Student[index+1];
                 for(int i=index+1;i<students.length;i++){
-                    Deepak a = new Deepak();
-                    a.remove(students,i,len);
+          
+                    this.remove(students,i,len);
                 }
                 len = students.length;
                 
@@ -231,5 +231,19 @@ public class StudentGroup implements StudentArrayOperation {
 		// Add your implementation here
 		return null;
 	}
+           public void remove(Student[] st,int index,int len){
+        if(index<0 || index >= st.length)
+                    throw new IllegalArgumentException();
+                Student[] temp;
+                temp = st;
+                st = new Student[len-1];
+                len--;
+                
+                for(int i = 0; i < len; i++){
+                    if(i == index)
+                        continue;
+                    st[i] = temp[i];
+                }
 
+}
 }
