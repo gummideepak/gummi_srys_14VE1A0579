@@ -99,7 +99,17 @@ public class StudentGroup implements StudentArrayOperation {
 	@Override
 	public void remove(int index) {
 		// Add your implementation here
+                Student[] temp;
+                temp = students;
+                this.students = new Student[len-1];
+                len--;
                 
+                for(int i = 0; i < len+1; i++){
+                    if(i == index)
+                        continue;
+                    students[i] = temp[i];
+                }
+                 
 	}
 
 	@Override
