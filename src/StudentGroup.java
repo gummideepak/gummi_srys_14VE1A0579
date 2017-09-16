@@ -58,6 +58,8 @@ public class StudentGroup implements StudentArrayOperation {
 	@Override
 	public void addFirst(Student student) {
 		// Add your implementation here
+                if(student == null)
+                    throw new IllegalArgumentException();
                 Student[] temp;
                 temp = students;
                 int index = 0;
@@ -72,6 +74,8 @@ public class StudentGroup implements StudentArrayOperation {
 	@Override
 	public void addLast(Student student) {
 		// Add your implementation here
+                if(student == null)
+                    throw new IllegalArgumentException();
                 Student[] temp;
                 temp = students;
                 int index = len+1;
@@ -86,6 +90,8 @@ public class StudentGroup implements StudentArrayOperation {
 	@Override
 	public void add(Student student, int index) {
 		// Add your implementation here
+                if(students == null||index<0 || index >= students.length)
+                    throw new IllegalArgumentException();
                 Student[] temp;
                 temp = students;
                 this.students = new Student[len+1];
@@ -99,6 +105,8 @@ public class StudentGroup implements StudentArrayOperation {
 	@Override
 	public void remove(int index) {
 		// Add your implementation here
+                if(index<0 || index >= students.length)
+                    throw new IllegalArgumentException();
                 Student[] temp;
                 temp = students;
                 this.students = new Student[len-1];
@@ -115,18 +123,32 @@ public class StudentGroup implements StudentArrayOperation {
 	@Override
 	public void remove(Student student) {
 		// Add your implementation here
+                boolean flag=false;
+                for(int j=0;j<len;j++){
+                    if(students[j].getFullName().equals(student.getFullName())){
+                        flag = true;
+                        break;
+                        
+                    }
+                }
+                if(flag){
                 Student[] temp;
                 temp = students;
                 this.students = new Student[len-1];
                 len--;
-                
+                int count=0;
                 for(int i = 0; i < len; i++){
                     //System.out.println(i);
-                    if(temp[i].getFullName().equals(student.getFullName()))
+                    if(temp[i].getFullName().equals(student.getFullName()) && count==0){
+                        count++;
                         continue;
+                        
+                    }
                     students[i] = temp[i];
                 }
-	}
+                }
+        }
+        
 
 	@Override
 	public void removeFromIndex(int index) {
