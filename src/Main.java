@@ -11,7 +11,7 @@ public class Main {
 		//You may test that your code works find here
 		//Please check that your code works and has no 
 		//compilation problems before to submit
-                String startDateString = "11/12/2232";
+                String startDateString = "11/12/1997";
 DateFormat df = new SimpleDateFormat("MM/dd/yyyy"); 
 Date startDate =null;
 try {
@@ -32,7 +32,8 @@ try {
                 System.out.println(cseb.len);
                 cseb.removeFromIndex(0);
                 System.out.println(cseb.len);
-                
-	}
+                System.out.println(cseb.getCurrentAgeByDate(0));
+               
 
+}
 }

@@ -1,3 +1,6 @@
+import java.time.LocalDate;
+import java.time.Month;
+import java.time.Period;
 import java.util.Date;
 
 /**
@@ -181,8 +184,9 @@ public class StudentGroup implements StudentArrayOperation {
 
 	@Override
 	public Student[] getByBirthDate(Date date) {
+            return null;
 		// Add your implementation here
-		return null;
+                
 	}
 
 	@Override
@@ -200,7 +204,10 @@ public class StudentGroup implements StudentArrayOperation {
 	@Override
 	public int getCurrentAgeByDate(int indexOfStudent) {
 		// Add your implementation here
-		return 0;
+                LocalDate today = LocalDate.now();
+                LocalDate birthday = LocalDate.of(students[indexOfStudent].getBirthDate().getYear(), students[indexOfStudent].getBirthDate().getMonth(),students[indexOfStudent].getBirthDate().getDay());
+                Period p = Period.between(birthday, today);
+		return p.getYears()-1900;
 	}
 
 	@Override
