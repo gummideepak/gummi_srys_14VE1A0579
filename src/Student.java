@@ -77,15 +77,10 @@ public class Student implements Comparable {
 
 	@Override
 	public boolean equals(Object obj) {
-		return super.equals(obj);
+            Student x = (Student)obj;
+            return this.avgMark == x.avgMark && this.birthDate.equals(x.birthDate) && this.fullName.equals(x.fullName) && this.id == x.id;
 	}
 	
-        public boolean ownEquals(Student std){
-            if(this.fullName.equals(std.fullName)){
-                return true;
-            }
-            return false;
-        }
 	
 	/**
 	 * DO NOT change this method it will be used during the task check

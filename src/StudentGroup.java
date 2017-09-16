@@ -139,7 +139,7 @@ public class StudentGroup implements StudentArrayOperation {
                 int count=0;
                 for(int i = 0; i < len; i++){
                     //System.out.println(i);
-                    if(temp[i].getFullName().equals(student.getFullName()) && count==0){
+                    if(temp[i].equals(student) && count==0){
                         count++;
                         continue;
                         
