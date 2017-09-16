@@ -104,7 +104,7 @@ public class StudentGroup implements StudentArrayOperation {
                 this.students = new Student[len-1];
                 len--;
                 
-                for(int i = 0; i < len+1; i++){
+                for(int i = 0; i < len; i++){
                     if(i == index)
                         continue;
                     students[i] = temp[i];
